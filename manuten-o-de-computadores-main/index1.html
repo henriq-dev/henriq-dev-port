@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>H4ckTech | Serviços</title>
+  <style>
+    /* Reset e base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    body {
+      background-color: #0a0a0a;
+      color: #33ff33;
+      overflow-x: hidden;
+    }
+
+    /* Canvas Matrix */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    header, footer {
+      text-align: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid #33ff33;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(10,10,10,0.85);
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      text-shadow: 0 0 8px #33ff33;
+      animation: blink 1s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      to { visibility: hidden; }
+    }
+
+    nav {
+      margin-top: 1rem;
+    }
+
+    nav a {
+      color: #33ff33;
+      text-decoration: none;
+      margin: 0 1rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00ffcc;
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(17,17,17,0.9);
+      border: 1px solid #33ff33;
+      border-left: 5px solid #00ff00;
+      border-radius: 8px;
+      box-shadow: 0 0 20px #00ff00;
+      padding: 2rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 5px #33ff33;
+      text-align: center;
+    }
+
+    .terminal-box {
+      background-color: #111;
+      border: 1px solid #33ff33;
+      border-left: 5px solid #00ff00;
+      border-radius: 5px;
+      padding: 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      box-shadow: 0 0 10px #00ff00;
+    }
+
+    .servico {
+      margin-bottom: 1.5rem;
+      transition: transform 0.2s, color 0.3s;
+    }
+
+    .servico:hover {
+      transform: translateX(5px);
+      color: #00ffcc;
+    }
+
+    .servico-title {
+      color: #00ffcc;
+      font-weight: bold;
+    }
+
+    footer {
+      border-top: 1px solid #33ff33;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+      background-color: rgba(10,10,10,0.85);
+      position: relative;
+      z-index: 1;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="matrix"></canvas>
+  <header>
+    <h1>H4ckTech</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="index1.html">Serviços</a>
+      <a href="index2.html">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="servicos">
+      <h2>Serviços Disponíveis</h2>
+      <div class="terminal-box">
+        <div class="servico">
+          <div class="servico-title">[1] Formatação + Backup</div>
+          Formatamos seu PC com segurança e fazemos backup dos dados importantes.
+        </div>
+
+        <div class="servico">
+          <div class="servico-title">[2] Remoção de Vírus e Malware</div>
+          Eliminamos ameaças silenciosas, com verificação profunda no sistema.
+        </div>
+
+        <div class="servico">
+          <div class="servico-title">[3] Upgrade de Hardware</div>
+          Troca de peças, instalação de SSD, mais RAM ou setup gamer completo.
+        </div>
+
+        <div class="servico">
+          <div class="servico-title">[4] Otimização de Desempenho</div>
+          Aceleração de sistema, ajustes no boot e limpeza de arquivos inúteis.
+        </div>
+
+        <div class="servico">
+          <div class="servico-title">[5] Montagem de PC Gamer</div>
+          Montagem personalizada com foco em performance e estética.
+        </div>
+
+        <div class="servico">
+          <div class="servico-title">[6] Recuperação de Dados</div>
+          Recuperamos arquivos deletados de HDs, SSDs, pendrives e cartões SD.
+        </div>
+
+        <div class="servico">
+          <div class="servico-title">[7] Limpeza Técnica</div>
+          Limpeza física interna e troca de pasta térmica para evitar superaquecimento.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 H4ckTech - Todos os direitos reservados.
+  </footer>
+
+  <script>
+    // Efeito Matrix
+    const canvas = document.getElementById('matrix');
+    const ctx = canvas.getContext('2d');
+
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
+    const letters = '01';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = '#0F0';
+      ctx.font = fontSize + 'px monospace';
+
+      for (let i = 0; i < drops.length; i++) {
+        const text = letters[Math.floor(Math.random() * letters.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+      }
+    }
+
+    setInterval(draw, 33);
+
+    window.addEventListener('resize', () => {
+      canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+    });
+  </script>
+</body>
+</html>
