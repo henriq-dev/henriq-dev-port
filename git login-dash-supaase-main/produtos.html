@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Produtos</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74b9ff, #a29bfe);
+      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+    .conteudo {
+      max-width: 600px;
+      width: 100%;
+      padding: 25px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .conteudo p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #555;
+    }
+    ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    a.botao {
+      display: inline-block;
+      padding: 12px 20px;
+      background: linear-gradient(90deg, #007bff, #00a8ff);
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+    }
+    a.botao:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(90deg, #0056b3, #0080ff);
+    }
+    a.botao:active {
+      transform: translateY(0);
+      background: #004494;
+    }
+    /* Botão fora da caixa */
+    .menu-botao {
+      margin-top: 25px;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsividade */
+    @media (max-width: 600px) {
+      .conteudo {
+        padding: 20px 15px;
+      }
+      a.botao {
+        padding: 10px 15px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Produtos</h1>
+
+  <div class="conteudo" id="produtos">
+    <p>Selecione um produto para ver mais detalhes:</p>
+    <ul>
+      <li><a href="bicicleta.html" class="botao">Bicicleta</a></li> 
+      <li><a href="#" class="botao">Produto 2</a></li>
+      <li><a href="#" class="botao">Produto 3</a></li>
+    </ul>
+  </div>
+
+  <a href="crud.html" class="botao menu-botao">Voltar ao Menu</a>
+</body>
+</html>

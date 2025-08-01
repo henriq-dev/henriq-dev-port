@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bicicleta</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #74b9ff, #a29bfe);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+    h1 {
+      color: white;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+    h3 {
+      color: white;
+      margin-bottom: 20px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    .card img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    hr {
+      margin: 20px 0;
+      border: none;
+      height: 1px;
+      background: #ddd;
+    }
+    a {
+      display: inline-block;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      padding: 12px 25px;
+      border-radius: 8px;
+      background: linear-gradient(90deg, #007BFF, #00a8ff);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: 0.3s ease;
+    }
+    a:hover {
+      transform: translateY(-3px);
+      background: linear-gradient(90deg, #0056b3, #0080ff);
+    }
+    a:active {
+      transform: translateY(0);
+      background: #004494;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>Bicicleta</h1>
+  <h3>Modelo:</h3>
+
+  <div class="card">
+    <img src="img/bicicleta_26_gts_m1_fat_bike_freio_hidraulico_1x11_i_vtec_fat_trail_4933_variacao_16645_1_715e2e83b4ae937b44157f43224c90a7_20250701160700.jpg" 
+         alt="Bicicleta">
+    <hr>
+    <a href="produtos.html">Voltar ao Menu - Produtos</a>
+  </div>
+</body>
+</html>
